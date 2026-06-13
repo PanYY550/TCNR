@@ -1,0 +1,167 @@
+(xwtj) [root@10 XWTJ-main]# cd /home/pyy/XWTJ-main/Rank && /root/miniconda3/envs/xwtj/bin/python din_rank.py
+2026-04-24 12:52:00.412477: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: 
+2026-04-24 12:52:00.412508: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2026-04-24 12:52:01,419 - /home/pyy/XWTJ-main/Rank/din_rank.py[line:667] - INFO: 
+============================================================
+2026-04-24 12:52:01,420 - /home/pyy/XWTJ-main/Rank/din_rank.py[line:668] - INFO: 
+DIN排序模型启动
+2026-04-24 12:52:01,420 - /home/pyy/XWTJ-main/Rank/din_rank.py[line:671] - INFO: 
+============================================================
+2026-04-24 12:52:01,420 - /home/pyy/XWTJ-main/Rank/din_rank.py[line:674] - INFO: 
+【步骤1】加载特征工程数据...
+WARNING:root:
+DeepCTR version 0.9.4 detected. Your version is 0.9.3.
+Use `pip install -U deepctr` to upgrade.Changelog: https://github.com/shenweichen/DeepCTR/releases/tag/v0.9.4
+2026-04-24 12:52:28,553 - /home/pyy/XWTJ-main/Rank/din_rank.py[line:676] - INFO: 
+特征列: ['user_id', 'article_id', 'itemcf_score', 'dssm_score', 'category_id', 'created_at_ts', 'words_count', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count', 'user_click_last_article_created_time', 'user_clicked_article_created_time_max', 'user_click_last_article_click_time', 'user_clicked_article_click_time_mean', 'user_last_click_created_at_ts_diff', 'user_last_click_timestamp_diff', 'user_last_click_words_count_diff', 'user_id_cnt', 'article_id_cnt', 'user_id_category_id_cnt']
+INFO:../Results/log/test_din_rank_20260424.txt:特征列: ['user_id', 'article_id', 'itemcf_score', 'dssm_score', 'category_id', 'created_at_ts', 'words_count', 'user_id_click_article_created_at_ts_diff_mean', 'user_id_click_diff_mean', 'user_click_timestamp_created_at_ts_diff_mean', 'user_click_timestamp_created_at_ts_diff_std', 'user_click_datetime_hour_std', 'user_clicked_article_words_count_mean', 'user_click_last_article_words_count', 'user_click_last_article_created_time', 'user_clicked_article_created_time_max', 'user_click_last_article_click_time', 'user_clicked_article_click_time_mean', 'user_last_click_created_at_ts_diff', 'user_last_click_timestamp_diff', 'user_last_click_words_count_diff', 'user_id_cnt', 'article_id_cnt', 'user_id_category_id_cnt']
+2026-04-24 12:52:28,553 - /home/pyy/XWTJ-main/Rank/din_rank.py[line:677] - INFO: 
+特征数据形状: (12499850, 27)
+INFO:../Results/log/test_din_rank_20260424.txt:特征数据形状: (12499850, 27)
+2026-04-24 12:52:28,553 - /home/pyy/XWTJ-main/Rank/din_rank.py[line:680] - INFO: 
+【步骤2】划分训练集和测试集...
+INFO:../Results/log/test_din_rank_20260424.txt:【步骤2】划分训练集和测试集...
+2026-04-24 12:52:36,960 - /home/pyy/XWTJ-main/Rank/din_rank.py[line:686] - INFO: 
+训练集用户数: 146982
+INFO:../Results/log/test_din_rank_20260424.txt:训练集用户数: 146982
+2026-04-24 12:52:36,960 - /home/pyy/XWTJ-main/Rank/din_rank.py[line:687] - INFO: 
+训练集样本数: 7349100
+INFO:../Results/log/test_din_rank_20260424.txt:训练集样本数: 7349100
+2026-04-24 12:52:36,960 - /home/pyy/XWTJ-main/Rank/din_rank.py[line:690] - INFO: 
+【步骤3】训练前评估（召回分数作为基准）...
+INFO:../Results/log/test_din_rank_20260424.txt:【步骤3】训练前评估（召回分数作为基准）...
+100%|████████████████████████████████████████████████████████████████████████| 146982/146982 [00:33<00:00, 4392.02it/s]
+2026-04-24 12:53:12,118 - /home/pyy/XWTJ-main/Rank/din_rank.py[line:176] - INFO: 
+训练前评估（召回阶段分数）：
+HitRate@5:  0.5135  |  MRR@5:  0.3084
+HitRate@10: 0.6824  |  MRR@10: 0.3310
+HitRate@20: 0.8391  |  MRR@20: 0.3420
+HitRate@40: 0.9670  |  MRR@40: 0.3466
+HitRate@50: 1.0000  |  MRR@50: 0.3473
+INFO:../Results/log/test_din_rank_20260424.txt:训练前评估（召回阶段分数）：
+HitRate@5:  0.5135  |  MRR@5:  0.3084
+HitRate@10: 0.6824  |  MRR@10: 0.3310
+HitRate@20: 0.8391  |  MRR@20: 0.3420
+HitRate@40: 0.9670  |  MRR@40: 0.3466
+HitRate@50: 1.0000  |  MRR@50: 0.3473
+2026-04-24 12:53:12,119 - /home/pyy/XWTJ-main/Rank/din_rank.py[line:694] - INFO: 
+【步骤4】构建用户历史点击行为序列...
+INFO:../Results/log/test_din_rank_20260424.txt:【步骤4】构建用户历史点击行为序列...
+2026-04-24 12:53:29,947 - /home/pyy/XWTJ-main/Rank/din_rank.py[line:715] - INFO: 
+【步骤5】Dense特征分桶离散化...
+INFO:../Results/log/test_din_rank_20260424.txt:【步骤5】Dense特征分桶离散化...
+2026-04-24 12:53:46,457 - /home/pyy/XWTJ-main/Rank/din_rank.py[line:725] - INFO: 
+【步骤6】验证数据完整性...
+INFO:../Results/log/test_din_rank_20260424.txt:【步骤6】验证数据完整性...
+2026-04-24 12:53:48,353 - /home/pyy/XWTJ-main/Rank/din_rank.py[line:736] - INFO: 
+【步骤7】训练DIN模型（5折交叉验证）...
+INFO:../Results/log/test_din_rank_20260424.txt:【步骤7】训练DIN模型（5折交叉验证）...
+2026-04-24 12:53:55,597 - /home/pyy/XWTJ-main/Rank/din_rank.py[line:513] - INFO: 
+
+===== Fold 1/5 =====
+INFO:../Results/log/test_din_rank_20260424.txt:
+===== Fold 1/5 =====
+2026-04-24 12:54:06.958253: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: 
+2026-04-24 12:54:06.958303: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcublas.so.11'; dlerror: libcublas.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: 
+2026-04-24 12:54:06.958329: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcublasLt.so.11'; dlerror: libcublasLt.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: 
+2026-04-24 12:54:06.958354: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcufft.so.10'; dlerror: libcufft.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: 
+2026-04-24 12:54:06.958379: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcurand.so.10'; dlerror: libcurand.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: 
+2026-04-24 12:54:06.958406: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcusolver.so.11'; dlerror: libcusolver.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: 
+2026-04-24 12:54:06.958430: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcusparse.so.11'; dlerror: libcusparse.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: 
+2026-04-24 12:54:06.958457: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudnn.so.8'; dlerror: libcudnn.so.8: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: 
+2026-04-24 12:54:06.958467: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1850] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2026-04-24 12:54:06.958754: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Epoch 1/10
+  162/22966 [..............................] - ETA: 16:01 - loss: nan - binary_crossentropy: nan - auc: 0.5785      Traceback (most recent call last):
+  File "/home/pyy/XWTJ-main/Rank/din_rank.py", line 762, in <module>
+    main()
+  File "/home/pyy/XWTJ-main/Rank/din_rank.py", line 737, in main
+    df_oof, prediction = train_din_model(
+  File "/home/pyy/XWTJ-main/Rank/din_rank.py", line 550, in train_din_model
+    model.fit(
+  File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/tensorflow/python/keras/engine/training.py", line 1189, in fit
+    tmp_logs = self.train_function(iterator)
+  File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/tensorflow/python/util/traceback_utils.py", line 153, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/tensorflow/python/eager/execute.py", line 58, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (model/prediction_layer/Reshape:0) = ] [[nan][nan][nan]...] [y (Cast_3/x:0) = ] [0]
+         [[node assert_greater_equal/Assert/AssertGuard/Assert
+ (defined at /root/miniconda3/envs/xwtj/lib/python3.9/site-packages/keras/utils/metrics_utils.py:608)
+]] [Op:__inference_train_function_6119]
+
+Errors may have originated from an input operation.
+Input Source operations connected to node assert_greater_equal/Assert/AssertGuard/Assert:
+In[0] assert_greater_equal/Assert/AssertGuard/Assert/assert_greater_equal/All:
+In[1] assert_greater_equal/Assert/AssertGuard/Assert/data_0:
+In[2] assert_greater_equal/Assert/AssertGuard/Assert/data_1:
+In[3] assert_greater_equal/Assert/AssertGuard/Assert/data_2:
+In[4] assert_greater_equal/Assert/AssertGuard/Assert/model/prediction_layer/Reshape:
+In[5] assert_greater_equal/Assert/AssertGuard/Assert/data_4:
+In[6] assert_greater_equal/Assert/AssertGuard/Assert/Cast_3/x:
+
+Operation defined at: (most recent call last)
+>>>   File "/home/pyy/XWTJ-main/Rank/din_rank.py", line 762, in <module>
+>>>     main()
+>>> 
+>>>   File "/home/pyy/XWTJ-main/Rank/din_rank.py", line 737, in main
+>>>     df_oof, prediction = train_din_model(
+>>> 
+>>>   File "/home/pyy/XWTJ-main/Rank/din_rank.py", line 550, in train_din_model
+>>>     model.fit(
+>>> 
+>>>   File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/tensorflow/python/keras/engine/training.py", line 1189, in fit
+>>>     tmp_logs = self.train_function(iterator)
+>>> 
+>>>   File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/tensorflow/python/keras/engine/training.py", line 859, in train_function
+>>>     return step_function(self, iterator)
+>>> 
+>>>   File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/tensorflow/python/keras/engine/training.py", line 849, in step_function
+>>>     outputs = model.distribute_strategy.run(run_step, args=(data,))
+>>> 
+>>>   File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/tensorflow/python/keras/engine/training.py", line 842, in run_step
+>>>     outputs = model.train_step(data)
+>>> 
+>>>   File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/tensorflow/python/keras/engine/training.py", line 804, in train_step
+>>>     self.compiled_metrics.update_state(y, y_pred, sample_weight)
+>>> 
+>>>   File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/tensorflow/python/keras/engine/compile_utils.py", line 460, in update_state
+>>>     metric_obj.update_state(y_t, y_p, sample_weight=mask)
+>>> 
+>>>   File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/tensorflow/python/keras/utils/metrics_utils.py", line 88, in decorated
+>>>     update_op = update_state_fn(*args, **kwargs)
+>>> 
+>>>   File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/tensorflow/python/keras/metrics.py", line 171, in update_state_fn
+>>>     return ag_update_state(*args, **kwargs)
+>>> 
+>>>   File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/tensorflow/python/keras/metrics.py", line 675, in update_state
+>>>     matches = ag_fn(y_true, y_pred, **self._fn_kwargs)
+>>> 
+>>>   File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/keras/metrics.py", line 236, in __call__
+>>>     return distributed_training_utils.call_replica_local_fn(
+>>> 
+>>>   File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/keras/distribute/distributed_training_utils.py", line 60, in call_replica_local_fn
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/keras/metrics.py", line 217, in replica_local_fn
+>>>     update_op = self.update_state(*args, **kwargs)  # pylint: disable=not-callable
+>>> 
+>>>   File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/keras/utils/metrics_utils.py", line 73, in decorated
+>>>     update_op = update_state_fn(*args, **kwargs)
+>>> 
+>>>   File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/keras/metrics.py", line 177, in update_state_fn
+>>>     return ag_update_state(*args, **kwargs)
+>>> 
+>>>   File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/keras/metrics.py", line 2343, in update_state
+>>>     return metrics_utils.update_confusion_matrix_variables(
+>>> 
+>>>   File "/root/miniconda3/envs/xwtj/lib/python3.9/site-packages/keras/utils/metrics_utils.py", line 608, in update_confusion_matrix_variables
+>>>     tf.compat.v1.assert_greater_equal(
+>>> 
+
+Function call stack:
+train_function -> assert_greater_equal_Assert_AssertGuard_false_5970
+
+(xwtj) [root@10 Rank]# 

@@ -1,0 +1,28 @@
+# 核心数据处理
+numpy==1.25.2
+pandas==2.2.3
+scipy==1.13.1
+
+# 深度学习
+tensorflow-gpu==2.7.0
+keras==2.7.0
+keras-preprocessing==1.1.2
+tensorflow-addons==0.17.1
+protobuf==3.20.3  # TF 2.7.0 需要 protobuf <= 3.20
+
+# 推荐系统专用库
+deepctr==0.9.3
+deepmatch==0.3.0
+
+# 向量检索
+faiss-cpu==1.9.0
+
+# 机器学习
+scikit-learn==1.6.0
+lightgbm==3.3.0
+
+# 工具库
+joblib==1.4.2
+tqdm==4.66.4
+pyyaml==6.0.2
+h5py==3.7.0

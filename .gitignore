@@ -1,0 +1,71 @@
+# 项目特定文件夹
+Initial_data/*
+__pycache__/
+Results/
+# Python
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+__pycache__/
+*.pyc
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# 虚拟环境
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 模型文件（通常很大）
+*.pkl
+*.h5
+*.pth
+*.ckpt
+*.model
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+*.tmp
+*.bak
+*.swp
+*.cache
+
+# CSV大文件（可选，根据需要调整）
+# *.csv
+
+# 系统文件
+Thumbs.db
+.DS_Store
+desktop.ini
