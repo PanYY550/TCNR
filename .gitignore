@@ -1,5 +1,6 @@
 # 项目特定文件夹
 Initial_data/*
+pdf/
 __pycache__/
 Results/
 # Python
